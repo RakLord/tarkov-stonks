@@ -12,7 +12,7 @@ class AdministrationCog(commands.Cog):
     @commands.has_permissions(kick_members=True) 
     async def kick(self, ctx):
         print("Kick debug 1")
-        target = ctx.message.content[1:].split()[1:]
+        target = ctx.message.mentions
         print(target)
         print(type(target))
         target = target[0]
