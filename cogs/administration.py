@@ -11,6 +11,7 @@ class AdministrationCog(commands.Cog):
     @commands.guild_only()
     @commands.has_permissions(kick_members=True) 
     async def kick(self, ctx, user: discord.Member):
+        print("Kick?")
         await ctx.guild.kick(user)
         await ctx.send(f"**Kicked:** `{user}`")
         await user.send(f"**You were kicked from:** {ctx.guild.name}")
