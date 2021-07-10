@@ -14,9 +14,9 @@ class AdministrationCog(commands.Cog):
         print("Kick debug 1")
         # target = ctx.message.mentions
         print("kick debug 2")
-        await ctx.send(f"Target: `{user.name}`")
+        await ctx.send(f"Target: `{user}`")
         print("kick debug 3")
-        await self.bot.kick(user)
+        await ctx.kick(user)
         log.clog(ctx)
         await log.dlog(ctx, self.bot)
         print("kick debug 4")
