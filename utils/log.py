@@ -26,7 +26,7 @@ async def dlog(ctx, bot):  # Discord log, only for command usage
 	embed_args = ", ".join(ctx.message.content[1:].split()[1:])
 	if not embed_args:
 		embed_args = "None"
-	if ctx.guild.name:
+	if ctx.guild:
 		embed_guild = ctx.guild.name
 		embed_var = discord.Embed(title="[ Tarkov-Stonks-Logs ]")
 		today = date.today().strftime("%b-%d-%Y")
