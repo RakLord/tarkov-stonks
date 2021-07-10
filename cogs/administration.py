@@ -10,13 +10,13 @@ class AdministrationCog(commands.Cog):
     @commands.command()
     @commands.guild_only()
     @commands.has_permissions(kick_members=True) 
-    async def kick(self, ctx):
+    async def kick(self, ctx, user: discord.Member):
         print("Kick debug 1")
-        target = ctx.message.mentions
+        # target = ctx.message.mentions
         print("kick debug 2")
-        await ctx.send(f"Target: `{target}`")
+        await ctx.send(f"Target: `{user.name}`")
         print("kick debug 3")
-        await self.bot.kick(target)
+        await self.bot.kick(user)
         log.clog(ctx)
         await log.dlog(ctx, self.bot)
         print("kick debug 4")
