@@ -10,9 +10,9 @@ class TarkovCog(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def search(self, ctx):
-        await ctx.send("Shut up")
-        log.dlog(ctx, self.bot)
+        await ctx.send("Feature WIP")
+        await log.dlog(ctx, self.bot)
 
 
 def setup(bot):
-	bot.add_cog(TarkovCog(bot))
+    bot.add_cog(TarkovCog(bot))

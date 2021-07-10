@@ -49,5 +49,5 @@ async def d_sys_log(bot, msg):
 	embed_var = discord.Embed(title="[ System Log ]")
 	today = date.today().strftime("%b-%d-%Y")
 	embed_var.set_footer(text=today)
-	embed_var.add_field(name="**LOG: **", value=msg, inline=True)
+	embed_var.add_field(name="**DATA: **", value=msg, inline=True)
 	await log_channel.send(embed=embed_var)
