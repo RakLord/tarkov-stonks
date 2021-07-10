@@ -88,6 +88,7 @@ async def on_ready():
     presence = discord.Game("Tarkov Stonks")
     await bot.change_presence(status=discord.Status.online, activity=presence)
 
+    await log.d_sys_log()
     print("DEBUG: Bot Online.")
 
 

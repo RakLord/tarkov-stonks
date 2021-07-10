@@ -21,7 +21,6 @@ def clog(ctx, dm=False):  # Console log for command usage
 
 async def dlog(ctx, bot, dm=False):  # Discord log, only for command usage
 	log_channel = bot.get_channel(862731162808090654)
-	print(log_channel)
 	embed_user = ctx.author
 	embed_action = ctx.message.content[1:].split()[0]
 	embed_args = ", ".join(ctx.message.content[1:].split()[1:])
@@ -33,10 +32,8 @@ async def dlog(ctx, bot, dm=False):  # Discord log, only for command usage
 
 		embed_guild = ctx.guild.name
 		embed_var = discord.Embed(title="[ Tarkov-Stonks-Logs ]")
-		today = date.today()
-		d = today.strftime("%b-%d-%Y")
-		print(d)
-		embed_var.set_footer(text=d)
+		today = date.today().strftime("%b-%d-%Y")
+		embed_var.set_footer(text=today)
 		embed_var.add_field(name="**User:** ", value=embed_user, inline=False)
 		embed_var.add_field(name="**Guild:** ", value=embed_guild,inline=False)
 		embed_var.add_field(name="**Action:** ", value=embed_action,inline=False)
@@ -45,3 +42,12 @@ async def dlog(ctx, bot, dm=False):  # Discord log, only for command usage
 
 	else:
 		print("Dm True")
+
+
+async def d_sys_log(bot, msg):
+	log_channel = bot.get_channel(862731162808090654)
+	embed_var = discord.Embed(title="[ System Log ]")
+	today = date.today().strftime("%b-%d-%Y")
+	embed_var.set_footer(text=today)
+	embed_var.add_field(name="**LOG: **", value=msg, inline=False)
+	log_channel.send(embed=embed_var)
