@@ -88,12 +88,12 @@ async def on_ready():
     presence = discord.Game("Tarkov Stonks")
     await bot.change_presence(status=discord.Status.online, activity=presence)
 
-    await log.d_sys_log()
+    await log.d_sys_log(bot, "ONLINE")
     print("DEBUG: Bot Online.")
 
 
-
 ignored_errors = (commands.CommandNotFound, )
+
 
 @commands.Cog.listener()
 @bot.event

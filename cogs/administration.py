@@ -18,4 +18,5 @@ class AdministrationCog(commands.Cog):
 
 
 def setup(bot):
-	bot.add_cog(AdministrationCog(bot))
+    bot.add_cog(AdministrationCog(bot))
+
