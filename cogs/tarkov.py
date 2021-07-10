@@ -14,6 +14,10 @@ class TarkovCog(commands.Cog):
         await log.clog(ctx)
         await log.dlog(ctx, self.bot)
 
+    @commands.command()
+    async def test(self, ctx):
+        await log.dlog(ctx, self.bot)
+
 
 def setup(bot):
     bot.add_cog(TarkovCog(bot))
