@@ -50,4 +50,4 @@ async def d_sys_log(bot, msg):
 	today = date.today().strftime("%b-%d-%Y")
 	embed_var.set_footer(text=today)
 	embed_var.add_field(name="**LOG: **", value=msg, inline=False)
-	log_channel.send(embed=embed_var)
+	await log_channel.send(embed=embed_var)
