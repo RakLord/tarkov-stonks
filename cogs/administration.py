@@ -14,9 +14,9 @@ class AdministrationCog(commands.Cog):
         print("Kick debug 1")
         target = ctx.message.mentions
         print(target)
-        print(type(target))
         target = target[0]
         print("Kick debug 2")
+        print(target.id)
         print(target)
         print(type(target))
         target = self.bot.get_user(target)
