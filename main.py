@@ -5,7 +5,7 @@ from utils import log
 
 
 # Hope you enjoy messy bad code :)
-
+# Testing updates
 # # # # # # # # # # # # # # #
 
 
@@ -17,6 +17,7 @@ TOKEN = f.read()
 
 # Initial config (maybe move to file later?)
 prefixes = [".", "!", "?", ","]
+
 
 def get_prefix(bot, message):
     if not message.guild:
