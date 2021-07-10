@@ -11,9 +11,10 @@ class AdministrationCog(commands.Cog):
     @commands.guild_only()
     @commands.has_permissions(kick_members=True) 
     async def kick(self, ctx):
+        print("Kick debug 1")
         target = ctx.message.content[1:].split()[1:]
         target = target[0]
-        target = bot.get_user(target)
+        target = self.bot.get_user(target)
         await ctx.send(target)
         await target.kick()
         log.clog(ctx)
