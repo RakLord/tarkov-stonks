@@ -13,14 +13,13 @@ class AdministrationCog(commands.Cog):
     async def kick(self, ctx):
         print("Kick debug 1")
         target = ctx.message.mentions
-        print(target)
+        print("kick debug 2")
+        await ctx.send(f"Target: `{target}`")
         print("kick debug 3")
-        await ctx.send(f"Target: {target}")
-        print("kick debug 4")
-        await ctx.guild.kick(target)
+        await ctx.kick(target)
         log.clog(ctx)
         await log.dlog(ctx, self.bot)
-        print("kick debug 5")
+        print("kick debug 4")
 
 
 
