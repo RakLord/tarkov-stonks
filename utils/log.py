@@ -19,7 +19,7 @@ def clog(ctx, dm=False):  # Console log for command usage
 
 
 
-async def dlog(ctx, bot , dm=False):  # Discord log, only for command usage
+async def dlog(ctx, bot, dm=False):  # Discord log, only for command usage
 	log_channel = bot.get_channel(862731162808090654)
 	print(log_channel)
 	embed_user = ctx.author
