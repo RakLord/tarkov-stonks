@@ -11,7 +11,7 @@ class TarkovCog(commands.Cog):
     @commands.guild_only()
     async def search(self, ctx):
         await ctx.send("Feature WIP")
-        await ctx.clog(ctx)
+        await log.clog(ctx)
         await log.dlog(ctx, self.bot)
 
 
