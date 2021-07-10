@@ -13,6 +13,7 @@ class AdministrationCog(commands.Cog):
     async def kick(self, ctx, user: discord.Member):
         await ctx.guild.kick(user)
         await ctx.send(f"**Kicked:** `{user}`")
+        await user.send(f"**You were kicked from:** {ctx.guild.name}")
         await log.dlog(ctx, self.bot)
 
 
