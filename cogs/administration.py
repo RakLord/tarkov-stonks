@@ -17,6 +17,8 @@ class AdministrationCog(commands.Cog):
         print(type(target))
         target = target[0]
         print("Kick debug 2")
+        print(target)
+        print(type(target))
         target = self.bot.get_user(target)
         print(target)
         print("kick debug 3")
