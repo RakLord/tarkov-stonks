@@ -16,7 +16,7 @@ class TarkovCog(commands.Cog):
 
     @commands.command()
     async def test(self, ctx):
-        await log.dlog(ctx, self.bot)
+        print("test cmd")
 
 
 def setup(bot):

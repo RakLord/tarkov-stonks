@@ -103,6 +103,7 @@ async def on_command_error(ctx, error):
 
     elif isinstance(error, commands.NoPrivateMessage):
         log.clog(ctx, True)
+        await log.dlog(ctx, bot)
 
 
 
