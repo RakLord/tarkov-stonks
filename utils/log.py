@@ -19,14 +19,14 @@ def clog(ctx, dm=False):  # Console log for command usage
 
 
 
-async def dlog(ctx, bot, dm=False):  # Discord log, only for command usage
+async def dlog(ctx, bot):  # Discord log, only for command usage
 	log_channel = bot.get_channel(862731162808090654)
 	embed_user = ctx.author
 	embed_action = ctx.message.content[1:].split()[0]
 	embed_args = ", ".join(ctx.message.content[1:].split()[1:])
 	if not embed_args:
 		embed_args = "None"
-	if not dm:
+	if ctx.guild.name:
 		embed_guild = ctx.guild.name
 		embed_var = discord.Embed(title="[ Tarkov-Stonks-Logs ]")
 		today = date.today().strftime("%b-%d-%Y")
