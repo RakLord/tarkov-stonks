@@ -13,9 +13,14 @@ class AdministrationCog(commands.Cog):
     async def kick(self, ctx):
         print("Kick debug 1")
         target = ctx.message.content[1:].split()[1:]
+        print(target)
         target = target[0]
+        print("Kick debug 2")
         target = self.bot.get_user(target)
+        print(target)
+        print("kick debug 3")
         await ctx.send(target)
+        print("kick debug 4")
         await target.kick()
         log.clog(ctx)
         await log.dlog(ctx, self.bot)
