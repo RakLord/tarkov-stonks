@@ -26,10 +26,7 @@ async def dlog(ctx, bot, dm=False):  # Discord log, only for command usage
 	embed_args = ", ".join(ctx.message.content[1:].split()[1:])
 	if not embed_args:
 		embed_args = "None"
-	print(dm)
 	if not dm:
-		print("DM False")
-
 		embed_guild = ctx.guild.name
 		embed_var = discord.Embed(title="[ Tarkov-Stonks-Logs ]")
 		today = date.today().strftime("%b-%d-%Y")
@@ -41,7 +38,15 @@ async def dlog(ctx, bot, dm=False):  # Discord log, only for command usage
 		await log_channel.send(embed=embed_var)
 
 	else:
-		print("Dm True")
+		embed_guild = "DM's"
+		embed_var = discord.Embed(title="[ Tarkov-Stonks-Logs ]")
+		today = date.today().strftime("%b-%d-%Y")
+		embed_var.set_footer(text=today)
+		embed_var.add_field(name="**User:** ", value=embed_user, inline=False)
+		embed_var.add_field(name="**Guild:** ", value=embed_guild,inline=False)
+		embed_var.add_field(name="**Action:** ", value=embed_action,inline=False)
+		embed_var.add_field(name="**Args:** ", value=embed_args,inline=False)
+		await log_channel.send(embed=embed_var)
 
 
 async def d_sys_log(bot, msg):
