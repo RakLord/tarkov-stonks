@@ -14,9 +14,8 @@ class AdministrationCog(commands.Cog):
         print("Kick debug 1")
         target = ctx.message.mentions
         print(target)
-        print(target.id)
         print("kick debug 3")
-        await ctx.channel.send(f"Target: {target}")
+        await ctx.send(f"Target: {target}")
         print("kick debug 4")
         await target.kick()
         log.clog(ctx)
