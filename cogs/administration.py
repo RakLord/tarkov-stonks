@@ -3,7 +3,7 @@ from discord.ext import commands
 from utils import log
 
 
-class Administration(commands.Cog):
+class AdministrationCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
